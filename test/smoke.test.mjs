@@ -1,6 +1,9 @@
-import { test } from "node:test"
-import assert from "node:assert/strict"
+import { test } from 'node:test';
+import assert from 'node:assert';
+import { greet } from '../src/greet.mjs';
 
-test("adds", () => {
-  assert.equal(1 + 1, 2)
-})
+test('greet returns formatted greeting', () => {
+  assert.strictEqual(greet('World'), 'Hello, World!');
+  assert.strictEqual(greet('Alice'), 'Hello, Alice!');
+  assert.strictEqual(greet(''), 'Hello, !');
+});
